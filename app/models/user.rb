@@ -1,16 +1,46 @@
 class User < ApplicationRecord
-  validates_uniqness_of :username
-  has_secure_password
-  has_secure_token :auth_token
+  before_save :downcase_email
   has_many :shows, dependent: :delete_all
 
+  has_secure_password
+  has_secure_token :auth_token
+
+  validates_uniqness_of :username, length: { maximum: 50 }
+  validates :password,
+            length: { minimum: 5 },
+            confirmation: true,
+            allow_nil: true
+  validates :email,
+            presence: true,
+            uniqueness: { case_sensative: false },
+            format: {
+              with: /\A[^@]+@([^@\.]+\.)+[^@\.]+\z/,
+              message: 'Thats not an email!'
+            },
+            length: {
+              minimum: 5
+            }
+  validates :password_confirmation,
+            presence: true,
+            if: :password_confirmation_required?
+
+  attr_reader :password_confirmation
+
   def invalidate_token
-    self.update_columns(auth_token: nil)
+    update_columns(auth_token: nil)
   end
 
   def self.validate_login(username, password)
     user = find_by(username: username)
     if user && user.authenticate(password)
     end
+  end
+
+  def downcase_email
+    self.email = email.downcase_email
+  end
+
+  def password_confirmation_required?
+    new_record? || password_confirmation.present?
   end
 end

@@ -51,10 +51,12 @@ Tory is a 25 year old woman who leads a very busy lifestyle and works in marketi
 
 ## Wireframes, Data Model, & React Components Outline
 **Wireframe**<br>
-![wireframes](./assets/images/app-wireframes.jpg)
-**Data Model**<br>
-![data model](./assets/images/data-model.jpg)
-**React Components**<br>
+![wireframes](./assets/images/app-wireframes.jpg)<br>
+
+**Data Model**
+![data model](./assets/images/data-model.jpg)<br>
+
+**React Components**
 ![components](./assets/images/react-chart.jpg)
 ---
 

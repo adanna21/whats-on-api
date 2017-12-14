@@ -58,6 +58,7 @@ Tory is a 25 year old woman who leads a very busy lifestyle and works in marketi
 
 **React Components**
 ![components](./assets/images/react-chart.jpg)
+
 ---
 
 ## Possible Issues

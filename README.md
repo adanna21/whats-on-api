@@ -1,15 +1,15 @@
-<h1 align="center">What's On Mobile App</h1>
+<h1 align="left">What's On Mobile App</h1>
 
 ## Overview
 
-**When is that show coming back??** This mobile app is for those unfortunate soles who forget when their favorite shows will be on air. You will never miss a new episode or premiere again. 
+**When is that show coming back??** This mobile app is for those unfortunate souls who forget when their favorite shows will be back on air. With this app you will never miss a new episode or premiere again. 
 
 ---
 
 ## User Story
 
-**Tory**
-Tory is a 25 year old woman who leads a very busy lifestyle and works in marketing. When she is not at work she is catching up on her favorite shows. One night she is searching for something to watch, it sure seemed like there were more shows on her agenda last fall. Try as she might she could not rember all the shows she was keeping up with last year. She wishes there was an app that had a list of the shows she was keeping up with last year in addition to the dates and times they would air again. Heck, lets get crazy, wouldn't it be great if it alerted her phone the week the show was coming back on?
+**Tory:**<br>
+Tory is a 25 year old woman who leads a very busy lifestyle and works in marketing. When she is not at work she is catching up on her favorite shows. One night she is searching for something to watch but wow, it sure seemed like there were more shows on her agenda last fall. Try as she might she could not rember all the shows she was keeping up with last year. She wishes there was an app that had a list of the shows she was keeping up with last year in addition to the dates and times they would air again. Heck, lets get crazy, wouldn't it be great if it alerted her phone the week the show was coming back on?
 
 
 ---
@@ -17,7 +17,7 @@ Tory is a 25 year old woman who leads a very busy lifestyle and works in marketi
 ## MVP Requirements
 
 * **Ability to search** tv shows by title
-* **Ability to login/out user** with an impresisve rails backend
+* **Ability to login/out user** with an impressive rails backend
 * **Ability to register users** 
 * **Ability to save** user's favorite show to backend
 * **Ability to delete** shows per user interphase
@@ -25,6 +25,7 @@ Tory is a 25 year old woman who leads a very busy lifestyle and works in marketi
 ## Rockstar Requirements
 
 * **Ability to update** user password?
+* **Ability to request** email change by email?
 * **Ability to filter** search by region
 * **Show ratings** of episodes
 * **Ability to show** episode details
@@ -35,7 +36,7 @@ Tory is a 25 year old woman who leads a very busy lifestyle and works in marketi
 ## Technologies
 
 - React Native
-- Rails api
+- Rails
 
 ---
 ### Timeline 
@@ -44,13 +45,16 @@ Tory is a 25 year old woman who leads a very busy lifestyle and works in marketi
 - **12/13 - 12/14**: Continue research, complete backend api.
 - **12/14 - 12/15**: MVP Complete
 - **12/16 - 12/17**: Styling Complete, possiblly add Rockstar items
-- **12/20**: SCIENCE FAIR AND GRADUATION!!!!!!! YOU MADE IT!!! YAY!!!
+- **12/20**: SCIENCE FAIR AND GRADUATION!!!!!!! WE MADE IT!!! YAY!!!
 
 ---
 
 ## Wireframes, Data Model, & React Components Outline
+**Wireframe**
 ![wireframes](./assets/images/app-wireframes.jpg)
+**Data Model**
 ![data model](./assets/images/data-model.jpg)
+**React Components**
 ![components](./assets/images/react-chart.jpg)
 ---
 

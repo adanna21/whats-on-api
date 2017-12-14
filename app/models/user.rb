@@ -12,4 +12,5 @@ class User < ApplicationRecord
     user = find_by(username: username)
     if user && user.authenticate(password)
     end
+  end
 end

@@ -1,3 +1,3 @@
 class ApplicationRecord < ActiveRecord::Base
-  include ActionController::HttpAuthentication::Token::ControllerMethods
+  self.abstract_class = true
 end

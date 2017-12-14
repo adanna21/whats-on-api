@@ -9,6 +9,7 @@ class UsersController < ApiController
       render json: user.errors
   end
 
+  # this method gives info about current user info  instead of user/id
   def profile
     user = User.find_by_auth_token!(request.headers[:token])
     render json: { user: { userame: user.username, email: user.email } }

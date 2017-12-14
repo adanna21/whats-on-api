@@ -9,23 +9,35 @@ export default class App extends React.Component {
     }
   }
 
-  async fetchShow () {
-    try {
-      let headers = {
+  fetchShow () {
+    fetch('https://api-staging.trakt.tv/shows/game-of-thrones?extended=full', {
+      headers: {
         'Content-Type': 'application/json',
         'trakt-api-version': '2',
         'trakt-api-key': 'dc60acabe3d5d953393a0e332d8d7d3c5e3c7b7710158b5223526e79f1cf597a'
       }
-      let response = await fetch(
-        'https://api-staging.trakt.tv/shows/game-of-thrones?extended=full', headers
-      )
-      let responseJson = await response.json()
-      console.log(responseJson.show)
-      return responseJson.show
-    } catch (error) {
-      console.error(error)
-    }
+    })
+      .then(res => res.json())
+      .then(res => console.log('res ', res))
+      .catch(err => console.log('error ', err))
   }
+
+  // async fetchShow () {
+  //   try {
+  //     let response = await fetch(
+  //       'https://api-staging.trakt.tv/shows/game-of-thrones?extended=full', {
+  //         headers: {
+  //           'Content-Type': 'application/json',
+  //           'trakt-api-version': '2',
+  //           'trakt-api-key': 'dc60acabe3d5d953393a0e332d8d7d3c5e3c7b7710158b5223526e79f1cf597a'
+  //         }
+  //       })
+  //     let responseJson = await response.json()
+  //     return responseJson.shows
+  //   } catch (error) {
+  //     console.error(error)
+  //   }
+  // }
 
   render () {
     return (
@@ -33,7 +45,7 @@ export default class App extends React.Component {
         {/* <Text>Open App.js to start working on your app!</Text> */}
         <Text>Changes you make will automatically reload.</Text>
         <Text >Shake your phone to open the developer menu.</Text>
-        <Button>onPress={this.fetchShow.bing(this) }</Button>
+        <Button onPress={this.fetchShow.bind(this) } title='Press Me'>Press Me</Button>
       </View>
     )
   }

@@ -1,6 +1,11 @@
 class SessionsController < ApiController
+  # this controler inherits fron api controller
+
+  # must be logged in to do everything except creating a user
+  skip_before_action :require_login, only: [:create], raise: false
+
   def create
-    if user == User.validate_login(params[:username], params[:password])
+    if User.validate_login(params[:username], params[:password])
       allow_token_to_be_used_only_once_for(user)
       send_token_for_valid_login_for(user)
     else
@@ -8,6 +13,7 @@ class SessionsController < ApiController
     end
   end
 
+  # for logging out
   def destroy
     logout
     head :ok
@@ -23,6 +29,7 @@ class SessionsController < ApiController
     user.regenerate_auth_token
   end
 
+  # current_user is api controller method
   def logout
     current_user.invalidate_token
   end

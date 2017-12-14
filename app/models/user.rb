@@ -30,14 +30,14 @@ class User < ApplicationRecord
     update_columns(auth_token: nil)
   end
 
+  # if the user and password match then return user
   def self.validate_login(username, password)
     user = find_by(username: username)
-    if user && user.authenticate(password)
-    end
+    user if user && user.authenticate(password)
   end
 
   def downcase_email
-    self.email = email.downcase_email
+    self.email = email.downcase
   end
 
   def password_confirmation_required?

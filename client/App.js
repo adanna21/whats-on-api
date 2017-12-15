@@ -21,7 +21,22 @@ export default class App extends React.Component {
       .then(res => console.log('res ', res))
       .catch(err => console.log('error ', err))
   }
-
+  getShow () {
+    fetch('http://192.168.1.2:3000/shows', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'token': 'V18A2txYHtwZrjMpZBzVqwBL',
+        'Authentication': 'Token V18A2txYHtwZrjMpZBzVqwBL'
+      },
+      body:  JSON.stringify({
+        "name": "Glee",
+        "trakt_id": "uuuuu",
+        "tvdb_id": "hhhhh",
+        "image_url": "jjjkk"
+      })
+    })
+  }
   // async fetchShow () {
   //   try {
   //     let response = await fetch(
@@ -46,6 +61,8 @@ export default class App extends React.Component {
         <Text>Changes you make will automatically reload.</Text>
         <Text >Shake your phone to open the developer menu.</Text>
         <Button onPress={this.fetchShow.bind(this) } title='Press Me'>Press Me</Button>
+        <Button onPress={this.getShow.bind(this) } title='Login'>Create</Button>
+        {/* <Button onPress={this.fetchShows.bind(this) } title='Press Me'>Get Shows</Button> */}
       </View>
     )
   }

@@ -1,6 +1,7 @@
 class ShowsController < ApiController
   before_action :require_login
 
+  # only shows shows added by logged in user
   def index
     shows = Show.where(user_id: current_user.id)
     if shows.blank?
@@ -10,7 +11,8 @@ class ShowsController < ApiController
     end
   end
 
-  # api can only give results of a show to the current user, if querry doesn't math it will throw error message
+  # api can only give results of a show to the current user
+  # if querry doesn't math it will throw error message
   def show
     show = Show.where('user_id = ? AND id = ?', current_user.id, params[:id])
     if show.blank?

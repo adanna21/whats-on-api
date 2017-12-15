@@ -16,6 +16,7 @@ class UsersController < ApiController
     render json: { user: { userame: user.username, email: user.email } }
   end
 
+  # anything below private can only be used by methods in this class
   private
 
   def user_params

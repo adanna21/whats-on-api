@@ -22,7 +22,7 @@ export default class App extends React.Component {
       .catch(err => console.log('error ', err))
   }
   getShow () {
-    fetch('http://192.168.1.2:3000/shows', {
+    fetch('http://24.185.162.181/shows', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

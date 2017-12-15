@@ -13,7 +13,8 @@ class UsersController < ApiController
   # this method gives info about current user using the user/id path
   def profile
     user = User.find_by_auth_token!(request.headers[:token])
-    render json: { user: { userame: user.username, email: user.email } }
+    user_shows = user.shows
+    render json: { user: { userame: user.username, email: user.email }, shows: user_shows }
   end
 
   # anything below private can only be used by methods in this class

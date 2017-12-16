@@ -7,7 +7,7 @@ class User < ApplicationRecord
   validates_uniqueness_of :username, length: { maximum: 50 }
   validates :password,
             length: { minimum: 5 },
-            # confirmation: true,
+            confirmation: true,
             allow_nil: true
   validates :email,
             presence: true,
@@ -19,9 +19,9 @@ class User < ApplicationRecord
             length: {
               minimum: 5
             }
-  # validates :password_confirmation,
-  #           presence: true,
-  #           if: :password_confirmation_required?
+  validates :password_confirmation,
+            presence: true,
+            if: :password_confirmation_required?
 
   attr_reader :password_confirmation
 
@@ -39,7 +39,7 @@ class User < ApplicationRecord
     self.email = email.downcase
   end
 
-  # def password_confirmation_required?
-  #   new_record? || password_confirmation.present?
-  # end
+  def password_confirmation_required?
+    new_record? || password_confirmation.present?
+  end
 end

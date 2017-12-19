@@ -7,7 +7,7 @@ class SessionsController < ApiController
   # Post /login
   def create
     puts params
-    if User.validate_login(params[:username], params[:password])
+    if user = User.validate_login(params[:username], params[:password])
       allow_token_to_be_used_only_once_for(user)
       send_token_for_valid_login_for(user)
     else

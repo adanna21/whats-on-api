@@ -4,7 +4,9 @@ class SessionsController < ApiController
   # must be logged in to do everything except creating a user
   skip_before_action :require_login, only: [:create], raise: false
 
+  # Post /login
   def create
+    puts params
     if User.validate_login(params[:username], params[:password])
       allow_token_to_be_used_only_once_for(user)
       send_token_for_valid_login_for(user)

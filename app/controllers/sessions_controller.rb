@@ -24,6 +24,7 @@ class SessionsController < ApiController
   private
 
   def send_token_for_valid_login_of(user)
+    puts '**'
     render json: { token: user.auth_token }
   end
 

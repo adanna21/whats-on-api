@@ -5,7 +5,7 @@ class ShowsController < ApiController
   def index
     shows = Show.where(user_id: current_user.id)
     if shows.blank?
-      render json: { message: 'No shows added' }
+      render json: { shows: null }
     else
       render json: { shows: shows }
     end
